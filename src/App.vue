@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <nav-bar/>
+    <nav-bar @toggle-handler="toggleHandler"/>
     <div class="content">
-      <side-bar/>
-      <b-container class="container">
+      <side-bar :toggle-menu="toggleMenu"/>
+      <b-container fluid class="background mx-0">
         <router-view/>
       </b-container>
     </div>
@@ -18,6 +18,14 @@ export default {
   components: {
     NavBar,
     SideBar,
+  },
+  data: () => ({
+    toggleMenu: false,
+  }),
+  methods: {
+    toggleHandler() {
+      this.toggleMenu = !this.toggleMenu;
+    },
   },
 };
 </script>
@@ -40,7 +48,7 @@ export default {
 
 .content
   display: flex
-.container
+.background
   background: #e1e1e1
 </style>
 <style src="./styles/global.sass" lang="sass"></style>

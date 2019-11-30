@@ -1,18 +1,24 @@
 <template>
-  <b-nav class="sidebar w-25" vertical>
+  <b-nav
+    class="sidebar"
+    vertical
+    :class="toggleClassHandler"
+    >
     <div class="sidebar__content">
       <b-nav-item
         v-for="item in sidebar.itens"
         class="sidebar__item"
         :key="item.text"
-        :href="item.route"
+        @click="route(item.routeName)"
         :class="{ 'sidebar__item-active': activeRoute === item.route }"
         >
         <span
           :class="item.icon"
           class="fa fa-edit sidebar__icon"
           />
-        {{ item.text }}
+        <span v-if="!toggleMenu">
+          {{ item.text }}
+        </span>
       </b-nav-item>
     </div>
   </b-nav>
@@ -22,12 +28,28 @@
 import sidebar from './sidebar.json';
 
 export default {
+  name: 'sidebar',
+  props: {
+    toggleMenu: {
+      type: Boolean,
+    },
+  },
   data: () => ({
     sidebar,
   }),
   computed: {
     activeRoute() {
       return this.$route.fullPath;
+    },
+    toggleClassHandler() {
+      return {
+        'w-25': !this.toggleMenu,
+      };
+    },
+  },
+  methods: {
+    route(path) {
+      this.$router.push({ path });
     },
   },
 };
