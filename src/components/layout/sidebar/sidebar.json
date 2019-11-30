@@ -1,0 +1,29 @@
+{
+  "itens": [
+    {
+      "text": "Meu painel",
+      "icon": "fas fa-home",
+      "route": "/"
+    },
+    {
+      "text": "Minhas tarefas",
+      "icon": "fas fa-clipboard-check",
+      "route": ""
+    },
+    {
+      "text": "Mensagens",
+      "icon": "fas fa-envelope",
+      "route": ""
+    },
+    {
+      "text": "Usuários",
+      "icon": "fas fa-user",
+      "route": "/users"
+    },
+    {
+      "text": "Contato",
+      "icon": "fas fa-comment",
+      "route": ""
+    }
+  ]
+}
