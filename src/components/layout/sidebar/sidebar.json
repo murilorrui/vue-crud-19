@@ -8,12 +8,12 @@
     {
       "text": "Minhas tarefas",
       "icon": "fas fa-clipboard-check",
-      "routeName": "/users"
+      "routeName": ""
     },
     {
       "text": "Mensagens",
       "icon": "fas fa-envelope",
-      "routeName": "/users"
+      "routeName": ""
     },
     {
       "text": "Usuários",
@@ -23,7 +23,7 @@
     {
       "text": "Contato",
       "icon": "fas fa-comment",
-      "routeName": "/users"
+      "routeName": ""
     }
   ]
 }
